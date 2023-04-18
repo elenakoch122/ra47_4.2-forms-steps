@@ -64,6 +64,7 @@ button:hover {
 
 .steps__list-data {
   padding: 8px;
+  list-style-type: none;
 }
 
 .steps__item {
