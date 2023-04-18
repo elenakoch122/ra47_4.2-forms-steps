@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+input {
+  display: block;
+  width: 12.5rem;
+  padding: 8px 16px;
+}
+
+input:focus {
+  outline: none;
+}
+
+button {
+  align-self: end;
+  padding: 8px 32px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+.steps {
+  width: 32rem;
+  margin: 40px auto;
+}
+
+.steps__form-input, .steps__form-input, .steps__form-button, .steps__list-data {
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+.steps__form-input, .steps__form-input, .steps__form-button {
+  margin-top: 8px;
+}
+
+.steps__form {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.steps__list-title, .steps__item {
+  display: flex;
+  text-align: center;
+}
+
+.steps__list-title {
+  margin-bottom: 16px;
+}
+
+.steps__item-date, .steps__item-dist, .steps__item-actions {
+  flex: 1;
+}
+
+.steps__item-actions {
+  display: inline-block;
+}
+
+.steps__list-data {
+  padding: 8px;
+}
+
+.steps__item {
+  margin-bottom: 16px;
+}
+
+.steps__item-actions-btn {
+  margin-right: 8px;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.steps__item-actions-btn.edit:hover {
+  color: #0ff00f;
+}
+
+.steps__item-actions-btn.delete:hover {
+  color: red;
+}
