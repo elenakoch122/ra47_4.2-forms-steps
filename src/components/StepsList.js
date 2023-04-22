@@ -1,6 +1,10 @@
 import StepsItem from "./StepsItem";
 
-export default function StepsList({ steps }) {
+export default function StepsList({ steps, onDelete, onEdit }) {
+  // const onClick = (e) => {
+  //   if (e.target.classList.contains('delete')) onDelete;
+  // };
+
   return (
     <div className="steps__list">
       <div className="steps__list-title">
@@ -9,7 +13,7 @@ export default function StepsList({ steps }) {
         <span className="steps__item-actions">Действия</span>
       </div>
       <ul className="steps__list-data">
-        {steps.map(s => <li><StepsItem item={s} key={s.id}/></li>)}
+        {steps.map(s => <li key={s.id}><StepsItem item={s} onDelete={onDelete} onEdit={onEdit}/></li>)}
       </ul>
     </div>
   );
