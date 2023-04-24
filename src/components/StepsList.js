@@ -1,10 +1,6 @@
 import StepsItem from "./StepsItem";
 
 export default function StepsList({ steps, onDelete, onEdit }) {
-  // const onClick = (e) => {
-  //   if (e.target.classList.contains('delete')) onDelete;
-  // };
-
   return (
     <div className="steps__list">
       <div className="steps__list-title">
