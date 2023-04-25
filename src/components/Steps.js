@@ -13,15 +13,31 @@ export default function Steps() {
   const addStep = () => {
     setStepsList((prev) => {
       const stepWithTheSameDate = prev.find(i => i.date === date);
+      let newState;
 
       if (!stepWithTheSameDate) {
-        const newState = [...prev, { date, dist, id: uuidv4() }];
-        newState.sort((a, b) => moment(a.date, 'DD-MM-YYYY').format('x') - moment(b.date, 'DD-MM-YYYY').format('x'));
-        return newState;
+        newState = [...prev, { date, dist, id: uuidv4() }];
+      } else {
+        const newStepWithTheSameDate = Object.assign({}, stepWithTheSameDate);
+        newStepWithTheSameDate.dist += dist;
+        newStepWithTheSameDate.id = uuidv4();
+        onDelete(stepWithTheSameDate.id);
+        newState = [...prev, newStepWithTheSameDate];
       }
 
-      stepWithTheSameDate.dist += dist;
-      return prev;
+      newState.sort((a, b) => moment(a.date, 'DD-MM-YYYY').format('x') - moment(b.date, 'DD-MM-YYYY').format('x'));
+      return newState;
+
+      // const stepWithTheSameDate = prev.find(i => i.date === date);
+
+      // if (!stepWithTheSameDate) {
+      //   const newState = [...prev, { date, dist, id: uuidv4() }];
+      //   newState.sort((a, b) => moment(a.date, 'DD-MM-YYYY').format('x') - moment(b.date, 'DD-MM-YYYY').format('x'));
+      //   return newState;
+      // }
+
+      // stepWithTheSameDate.dist += dist;
+      // return prev;
     });
 
     setDate('');
